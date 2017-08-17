@@ -3,4 +3,4 @@
 
 # Running
 Download the files from repo. into your local machine & run the index.html in browser.<br>
-Alternatively, checkout the demo at https://sndy.github.io/ng-todo/
+Alternatively, checkout the demo at http://sndy.in/ng-todo/ || https://sndy.github.io/ng-todo/
