@@ -1,4 +1,6 @@
+
 .done-true {
+    background-color: #dff0d8;
     text-decoration: line-through;
     font-style: italic;
     color: grey;

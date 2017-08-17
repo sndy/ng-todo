@@ -9,7 +9,7 @@
         <script type="text/javascript" src="todo.js"></script>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="todo.css">
+        <link rel="stylesheet" href="todo.css">
     </head>
     <body> 
         <div class="container" ng-controller="TodoCtrl">
@@ -23,9 +23,9 @@
                         </span>
                     </div>
                     <ul class="list-group">
-                        <li ng-class="{'bg-success': todo.done}" class="list-group-item" ng-repeat="todo in todos">
-                            <input type="checkbox" ng-model="todo.done">
-                            <span class="done-{{todo.done}}">{{todo.text}}</span>
+                        <li class="list-group-item done-{{todo.done}}" ng-repeat="todo in todos track by $index">
+                            <input type="checkbox" ng-model="todo.done" ng-change="updateTaskList()">
+                            <span>{{todo.text}}</span>
                         </li>
                     </ul>
                     <button class="btn btn-warning btn-block" ng-click="clearCompleted()" ng-disabled="disableClear()"><span class="glyphicon glyphicon-trash"> Clear Completed</button>
