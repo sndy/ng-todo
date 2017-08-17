@@ -1,4 +1,6 @@
 'use strict';
+
+
 var app = angular.module('todoApp', []);
 
 app.controller('TodoCtrl', function ($scope) {
@@ -17,8 +19,10 @@ app.controller('TodoCtrl', function ($scope) {
     };
 
     $scope.clearCompleted = function () {
-        $scope.todos = $scope.todos.filter(todo => !todo.done);
-        $scope.updateTaskList($scope.todos);
+        if (confirm('Are you sure you want to clear the completed task(s)?')) {
+            $scope.todos = $scope.todos.filter(todo => !todo.done);
+            $scope.updateTaskList($scope.todos);
+        }
     };
 
     $scope.disableClear = function () {
